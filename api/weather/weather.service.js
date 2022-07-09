@@ -18,7 +18,6 @@ async function query(filterBy) {
     }
 }
 
-
 function _getWeather(data) {
     return {
         city: data.location.name,
@@ -47,6 +46,10 @@ function _getWeather(data) {
         ],
         hours: [
             {
+                time: data.forecast.forecastday[0].hour[13].time_epoch,
+                tempC: data.forecast.forecastday[0].hour[13].temp_c
+            },
+            {
                 time: data.forecast.forecastday[0].hour[14].time_epoch,
                 tempC: data.forecast.forecastday[0].hour[14].temp_c
             },
@@ -61,10 +64,6 @@ function _getWeather(data) {
             {
                 time: data.forecast.forecastday[0].hour[17].time_epoch,
                 tempC: data.forecast.forecastday[0].hour[17].temp_c
-            },
-            {
-                time: data.forecast.forecastday[0].hour[18].time_epoch,
-                tempC: data.forecast.forecastday[0].hour[18].temp_c
             }
         ]
     }
