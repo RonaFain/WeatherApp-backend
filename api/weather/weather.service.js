@@ -13,7 +13,7 @@ async function query(filterBy) {
         const { data } = await axios.get(url)
         return _getWeather(data)
     } catch (err) {
-        console.log('cannot find weather', err)
+        console.log('cannot find weather')
         throw err
     }
 }
